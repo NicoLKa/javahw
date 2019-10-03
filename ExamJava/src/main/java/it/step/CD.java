@@ -1,18 +1,23 @@
 package it.step;
 
+import java.io.File;
+
 public class CD {
-    private String[] path;
-    public CD(String[] sp) {
+    private String path;
+    public CD(String sp) {
         path = sp;
+        perform();
     }
 
-    public static void main(String[] args) {
-
-    }
-
-    public void perform(){
-        for (int i = 1; i < path.length; i++) {
-            System.out.println(path[i]);
+    private String perform(){
+        if(!new File(path).isDirectory()){
+            System.out.println("Этот путь не верный");
+            return path = null;
         }
+        return path;
+    }
+
+    public String getPath(){
+        return path;
     }
 }
