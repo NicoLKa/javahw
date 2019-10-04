@@ -17,9 +17,10 @@ public class Main {
                     "cd «путь» — перейти в директорию, путь к которой задан первым аргументом\n" +
                     "pwd — вывести полный путь до текущей директории\n" +
                     "cat «имя_файла» - выводит содержимое текстового файла «имя_файла»\n" +
-                    "download «url» «имя_файла» - загружает файл\n" +
-                    "& - включение многопоточности.\n" +
-                    "break - завершить работу програмы");
+                    "download - download «url» «имя_файла» загружает файл\n" +
+                    "& -- многопоточноть ключение\n" +
+                    "break - завершить работу програмы\n");
+
             consScan = scanner.nextLine();
             sp = consScan.split(" ");
 
@@ -53,6 +54,7 @@ public class Main {
                     }
                     break;
                 case "&":
+                    BackgroundUse.printComand();
                     new BackgroundUse(path);
                     break;
                 case "break":

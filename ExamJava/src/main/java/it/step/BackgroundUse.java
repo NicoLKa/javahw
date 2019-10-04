@@ -21,16 +21,6 @@ public class BackgroundUse {
 
         b:
         while (true) {
-            System.out.println("\n" + "Фоновый режим:\n" +
-                    "Команды консоли: \n" +
-                    "dir — выводит список файлов в текущей директории\n" +
-                    "cd «путь» — перейти в директорию, путь к которой задан первым аргументом\n" +
-                    "pwd — вывести полный путь до текущей директории\n" +
-                    "cat «имя_файла» - выводит содержимое текстового файла «имя_файла»\n" +
-                    "download - download «url» «имя_файла» загружает файл\n" +
-                    "break - завершить работу програмы в многопоточном режиме" +
-                    "(переходит в последовательный режим роботы)");
-
             consScan = scanner.nextLine();
             if ("break".equals(consScan)) {
                 service.shutdownNow();
@@ -48,6 +38,7 @@ public class BackgroundUse {
                         } else {
                             new Dir(path);
                         }
+                        printComand();
                         break;
                     case "cd":
                         path = new CD(Main.pathFile(sp)).getPath();
@@ -59,11 +50,14 @@ public class BackgroundUse {
                         } else {
                             new PWD(path);
                         }
+                        printComand();
                         break;
                     case "cat":
                         new Cat(Main.pathFile(sp));
+                        printComand();
                         break;
                     case "download":
+                        printComand();
                         if(path.equals("")){
                             new Download(Main.pathFile(sp));
                         }else {
@@ -73,5 +67,18 @@ public class BackgroundUse {
                 }
             });
         }
+    }
+
+    static void printComand(){
+        System.out.println("\n" + "Фоновый режим:\n" +
+                "Команды консоли: \n" +
+                "dir — выводит список файлов в текущей директории\n" +
+                "cd «путь» — перейти в директорию, путь к которой задан первым аргументом\n" +
+                "pwd — вывести полный путь до текущей директории\n" +
+                "cat «имя_файла» - выводит содержимое текстового файла «имя_файла»\n" +
+                "download - download «url» «имя_файла» загружает файл\n" +
+                "break - завершить работу програмы в многопоточном режиме" +
+                "(переходит в последовательный режим роботы)\n");
+
     }
 }
