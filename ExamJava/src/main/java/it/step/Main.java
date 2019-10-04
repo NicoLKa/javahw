@@ -7,15 +7,18 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String consScan;
         String[] sp;
-        String path = null;
+        String path = "";
         boolean check = false;
         a:
         while (true) {
-            System.out.println("\nКоманды консоли: \n" +
+            System.out.println("\n" + "Последовательный режим:\n" +
+                    "Команды консоли: \n" +
                     "dir — выводит список файлов в текущей директории\n" +
                     "cd «путь» — перейти в директорию, путь к которой задан первым аргументом\n" +
                     "pwd — вывести полный путь до текущей директории\n" +
-                    "cat «имя_файла» - выводит содержимое текстового файла «имя_файла»" +
+                    "cat «имя_файла» - выводит содержимое текстового файла «имя_файла»\n" +
+                    "download «url» «имя_файла» - загружает файл\n" +
+                    "& - включение многопоточности.\n" +
                     "break - завершить работу програмы");
             consScan = scanner.nextLine();
             sp = consScan.split(" ");
@@ -32,7 +35,6 @@ public class Main {
                     path = new CD(pathFile(sp)).getPath();
                     check = true;
                     break;
-
                 case "pwd":
                     if (!check) {
                         new PWD(pathFile(sp));
@@ -40,21 +42,26 @@ public class Main {
                         new PWD(path);
                     }
                     break;
-
                 case "cat":
                     new Cat(pathFile(sp));
                     break;
                 case "download":
-                    new Download();
+                    if(path.equals("")){
+                        new Download(pathFile(sp));
+                    }else {
+                        new Download(pathFile(sp), path);
+                    }
+                    break;
+                case "&":
+                    new BackgroundUse(path);
                     break;
                 case "break":
-
                     break a;
             }
         }
     }
 
-    static private String pathFile(String[] sp) {
+    static protected String pathFile(String[] sp) {
         String path;
 
         if (sp[0].equals("dir") || "pwd".equals(sp[0])) {
