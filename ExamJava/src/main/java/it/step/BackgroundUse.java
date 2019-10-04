@@ -43,6 +43,7 @@ public class BackgroundUse {
                     case "cd":
                         path = new CD(Main.pathFile(sp)).getPath();
                         check = true;
+                        printComand();
                         break;
                     case "pwd":
                         if (!check) {
