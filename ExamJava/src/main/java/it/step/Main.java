@@ -2,6 +2,7 @@ package it.step;
 
 import java.util.Scanner;
 
+// TODO: замечания см. такие же, как и Бородай Сергея
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -9,7 +10,7 @@ public class Main {
         String[] sp;
         String path = "";
         boolean check = false;
-        a:
+        a: // TODO: не хорошо использовать метки и операторы безусловного перехода
         while (true) {
             System.out.println("\n" + "Последовательный режим:\n" +
                     "Команды консоли: \n" +
@@ -22,7 +23,7 @@ public class Main {
                     "break - завершить работу програмы\n");
 
             consScan = scanner.nextLine();
-            sp = consScan.split(" ");
+            sp = consScan.split(" "); // TODO:
 
             switch (sp[0]) {
                 case "dir":
