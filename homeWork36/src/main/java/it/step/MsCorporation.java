@@ -1,4 +1,4 @@
-package it.step.task01;
+package it.step;
 
 import java.util.ArrayList;
 import java.util.List;

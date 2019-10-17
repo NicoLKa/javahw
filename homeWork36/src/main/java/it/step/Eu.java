@@ -1,4 +1,4 @@
-package it.step.task01;
+package it.step;
 
 public class Eu extends Market{
     @Override
