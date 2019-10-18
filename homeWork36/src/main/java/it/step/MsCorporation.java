@@ -5,8 +5,11 @@ import java.util.List;
 
 
 //В этом классе содержться паттерн Composite и патерн Iterator
-public class MsCorporation implements Collection {
+//getReport(); - вызов просто в цикле без итератора
+//getUnits(); - вызов с исполозованием итератора
+public class MsCorporation implements AllUnits,Collection {
     private static List<AllUnits> compor = new ArrayList<>();
+    private static MsCorporation comp = new MsCorporation();
 
     private void allCompor(AllUnits... allUnits) {
         for (AllUnits a : allUnits) {
@@ -22,6 +25,15 @@ public class MsCorporation implements Collection {
 
     public Iterator getIterator() {
         return new IteratorMy();
+    }
+
+    @Override
+    public void getUnits() {
+        Iterator iter = comp.getIterator();
+
+        while (iter.hasNext()){
+            iter.next();
+        }
     }
 
 
@@ -59,12 +71,10 @@ public class MsCorporation implements Collection {
         );
 
         comp.getReport();
-
+        System.out.println();
         //Итератор
-        Iterator iter = comp.getIterator();
+        //comp.getUnits();
 
-        while (iter.hasNext()){
-            iter.next();
-        }
+
     }
 }
