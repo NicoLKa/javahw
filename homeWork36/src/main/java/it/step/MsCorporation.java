@@ -3,6 +3,8 @@ package it.step;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//В этом классе содержться паттерн Composite и патерн Iterator
 public class MsCorporation implements Collection {
     private static List<AllUnits> compor = new ArrayList<>();
 
