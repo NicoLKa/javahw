@@ -8,7 +8,7 @@ import java.util.List;
 //getReport(); - вызов просто в цикле без итератора
 //getUnits(); - вызов с исполозованием итератора
 public class MsCorporation implements AllUnits,Collection {
-    private static List<AllUnits> compor = new ArrayList<>();
+    private List<AllUnits> compor = new ArrayList<>();
     private static MsCorporation comp = new MsCorporation();
 
     private void allCompor(AllUnits... allUnits) {
@@ -72,7 +72,7 @@ public class MsCorporation implements AllUnits,Collection {
         comp.getReport();
         System.out.println();
         //Итератор
-        //comp.getUnits();
+        comp.getUnits();
 
 
     }
