@@ -57,7 +57,6 @@ public class MsCorporation implements AllUnits,Collection {
     }
 
     public static void main(String[] args) {
-        MsCorporation comp = new MsCorporation();
 
         comp.allCompor(new Develoment(),
                         new Eu(),
