@@ -3,6 +3,7 @@ package it.step;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.step.example.*;
 
 //В этом классе содержться паттерн Composite и патерн Iterator
 //getUnits(); - вызов с исполозованием итератора
@@ -20,28 +21,41 @@ public class MsCorporation implements AllUnits {
     public void getUnits() {
         Iterator iter = cont.getIterator();
 
-        while (iter.hasNext()){
+        while (iter.hasNext()) {
             iter.next();
         }
     }
 
     public static void main(String[] args) {
-        MsCorporation comp = new MsCorporation();
+        // Зачем так много классов? Классов должно быть только два -
+        // первый - который представляет составной объект (подразделение)
+        // и второй - простой - отдел. Естественно должен быть и базовый класс
 
-        comp.allCompor(new Develoment(),
-                        new Eu(),
-                        new Usa(),
-                        new Uk(),
-                        new Hh(),
-                        new Market(),
-                        new Game(),
-                        new Office(),
-                        new Os()
-        );
+        // Пример находится в пакете example
 
-        //Итератор
-        comp.getUnits();
+        Unit corporation = new Branch("MS");
+        corporation.add(new Branch("Dev"));
+        corporation.getUnit("Dev").add(new Department("OS"));
+        corporation.getUnit("Dev").add(new Department("Game"));
+        corporation.getUnit("Dev").add(new Department("Office"));
 
+        System.out.println(corporation.report());
+
+        // MsCorporation comp = new MsCorporation();
+
+        // comp.allCompor(new Develoment(),
+        // new Eu(),
+        // new Usa(),
+        // new Uk(),
+        // new Hh(),
+        // new Market(),
+        // new Game(),
+        // new Office(),
+        // new Os()
+        // );
+
+        // //Итератор
+        // comp.getUnits();
 
     }
 }
