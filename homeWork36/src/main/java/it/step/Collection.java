@@ -1,5 +1,6 @@
 package it.step;
 
-public interface Collection {
+// Зачем нужен еше один интерфейс, если уже есть Iterable?
+public interface Collection  {
     Iterator getIterator();
 }
