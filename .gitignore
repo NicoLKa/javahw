@@ -71,3 +71,4 @@ fabric.properties
 .project
 .vscode
 target
+.classpath
