@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Task02(My To Do List)</title>
@@ -20,6 +21,7 @@
         ul {
             list-style-type: none;
             margin: 20px;
+            list-style-position: inside;
         }
 
         li {
@@ -33,10 +35,14 @@
 
         .notEven {
             background-color: #a6cddb;
+            padding-left: 30px;
+            list-style-image: url('../img/unchecked_16.png');
         }
 
         .checked {
             background-color: #e3e3e3;
+            padding-left: 30px;
+            list-style-image: url('../img/checked_16.png');
         }
 
         .textChecked {
@@ -51,28 +57,43 @@
             padding-left: 20px;
         }
 
-        .cross{
-            font-size:10px;
+        .cross {
+            font-size: 10px;
         }
     </style>
 </head>
+
 <body>
-<main>
-    <h3>My To Do list</h3>
-    <ul>
-        <li class="notEven"><img src="../img/unchecked_16.png" alt="unchecked"/> <span>Hit the gym</span><span class="cross">❌</span></li>
-        <li class="checked"><img src="../img/checked_16.png" alt="checked"/> <span class="textChecked">Pay bills</span><span class="cross">❌</span></li>
-        <li class="notEven"><img src="../img/unchecked_16.png" alt="unchecked"/> <span>Meet John</span><span class="cross">❌</span></li>
-        <li class="even"><img src="../img/unchecked_16.png" alt="unchecked"/> <span>Buy eggs</span><span class="cross">❌</span></li>
-        <li class="checked"><img src="../img/checked_16.png" alt="checked"/> <span class="textChecked">Read a book</span><span class="cross">❌</span></li>
-        <li class="even"><img src="../img/unchecked_16.png" alt="unchecked"/> <span>Organize office</span><span class="cross">❌</span></li>
-        <li class="notEven"><img src="../img/unchecked_16.png" alt="unchecked"/> <span>Eat dinner</span><span class="cross">❌</span></li>
-        <li class="even"><img src="../img/unchecked_16.png" alt="unchecked"/> <span>Buy apples</span><span class="cross">❌</span></li>
-        <li class="notEven"><img src="../img/unchecked_16.png" alt="unchecked"/> <span>Meet George</span><span class="cross">❌</span></li>
-        <li class="even"><img src="../img/unchecked_16.png" alt="unchecked"/> <span>Feed the cat</span><span class="cross">❌</span></li>
-        <li class="checked"><img src="../img/checked_16.png" alt="checked"/> <span class="textChecked">Write a letter</span><span class="cross">❌</span></li>
-        <li class="even"><img src="../img/unchecked_16.png" alt="unchecked"/> <span>Run 1km</span><span class="cross">❌</span></li>
-    </ul>
-</main>
+    <main>
+        <h3>My To Do list</h3>
+        <ul>
+            <!-- Зачем тут span? -->
+            <!-- Не должно быть img. Нужн было задать стиль списка -->
+            <li class="notEven">Hit the gym<span class="cross">❌</span></li>
+            <li class="checked">Pay bills<span class="cross">❌</span></li>
+            <!-- FIXME: убрать все изображения -->
+            <li class="notEven"><img src="../img/unchecked_16.png" alt="unchecked" /> <span>Meet John</span><span
+                    class="cross">❌</span></li>
+            <li class="even"><img src="../img/unchecked_16.png" alt="unchecked" /> <span>Buy eggs</span><span
+                    class="cross">❌</span></li>
+            <li class="checked"><img src="../img/checked_16.png" alt="checked" /> <span class="textChecked">Read a
+                    book</span><span class="cross">❌</span></li>
+            <li class="even"><img src="../img/unchecked_16.png" alt="unchecked" /> <span>Organize office</span><span
+                    class="cross">❌</span></li>
+            <li class="notEven"><img src="../img/unchecked_16.png" alt="unchecked" /> <span>Eat dinner</span><span
+                    class="cross">❌</span></li>
+            <li class="even"><img src="../img/unchecked_16.png" alt="unchecked" /> <span>Buy apples</span><span
+                    class="cross">❌</span></li>
+            <li class="notEven"><img src="../img/unchecked_16.png" alt="unchecked" /> <span>Meet George</span><span
+                    class="cross">❌</span></li>
+            <li class="even"><img src="../img/unchecked_16.png" alt="unchecked" /> <span>Feed the cat</span><span
+                    class="cross">❌</span></li>
+            <li class="checked"><img src="../img/checked_16.png" alt="checked" /> <span class="textChecked">Write a
+                    letter</span><span class="cross">❌</span></li>
+            <li class="even"><img src="../img/unchecked_16.png" alt="unchecked" /> <span>Run 1km</span><span
+                    class="cross">❌</span></li>
+        </ul>
+    </main>
 </body>
+
 </html>
