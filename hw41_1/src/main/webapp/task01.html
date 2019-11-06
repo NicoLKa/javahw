@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task01()</title>
+    <style>
+        a{
+            padding: 10px 30px;
+            margin: 15px;
+            border: 1px solid green;
+            background: cadetblue;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-family: sans-serif;
+            position: relative;
+            top:100%;
+        }
+        main{
+            background-color: #a0cece;
+            width: 750px;
+            height: 430px;
+            margin: 50px;
+            border: 1px solid white;
+            border-radius: 20px;
+            font-family: sans-serif;
+        }
+
+        h3{
+            background-color: #dc641e;
+            margin-top: 30px;
+            margin-left: -30px;
+            color: white;
+            padding: 10px;
+            width: 500px;
+        }
+        form{
+            margin-left: 30px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        img{
+            width: 350px;
+            height: 330px;
+            position: relative;
+            object-position: 100px 70px;
+            left:400px;
+            bottom: 265px;
+            background: #a0cece;
+            display: block;
+            border-radius: 20px;
+        }
+        input{
+            background-color: #aad3d3;
+            padding:10px;
+            border: none;
+            border-bottom: 2px solid #84aeaf;
+            font-size: 15px;
+        }
+
+        .bigInp{
+            width: 340px;
+        }
+
+        .smallInp{
+            width: 50px;
+            margin-left: 70px;
+        }
+        #month{
+            margin-left: 0;
+        }
+        .ccvLab{
+            margin-left: 210px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <br/>
+        <h3>
+           CREDIT CARD DETAILS
+        </h3>
+            <form action="creditСard">
+                <p><label for="cardNumber">Card Number</label></p>
+                <input class="bigInp" id="cardNumber" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" name="cardNumber" placeholder="0000 0000 0000 0000" maxlength="16" required/>
+                <p><label for="cardName">Name On Card</label></p>
+                <input class="bigInp" id="cardName" name="cardName" placeholder="Name Surname" required/>
+                <p><label for="month">Empty Date</label><label class="ccvLab" for="cvv">CVV/CNV</label></p>
+                <input class="smallInp" id="month" maxlength="2" placeholder="02" name="month" required/>
+                <input class="smallInp" name="years" maxlength="4" placeholder="2017" required/>
+                <input id="cvv" class="smallInp" type="password" name="password" maxlength="3" placeholder="***" required/>
+
+            </form>
+        <img src="img/moon_flag.png" alt="moon_flag"/>
+        <br/>
+
+    </main>
+    <a href="index.html">Back</a>
+
+
+</body>
+</html>
