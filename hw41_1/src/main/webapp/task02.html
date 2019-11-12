@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task02</title>
+    <style>
+        a{
+            padding: 10px 30px;
+            margin: 15px;
+            border: 1px solid green;
+            background: cadetblue;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            font-family: sans-serif;
+            position: relative;
+            top:100%;
+        }
+
+        .checkbox {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            margin: 10px 0 0 20px;
+        }
+        .checkbox + label {
+            position: relative;
+            padding: 0 0 0 60px;
+            cursor: pointer;
+        }
+        .checkbox + label:before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 0;
+            width: 50px;
+            height: 26px;
+            border-radius: 5px;
+            border: 1px solid green;
+            transition: .2s;
+        }
+        .checkbox + label:after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 2px;
+            width: 22px;
+            height: 22px;
+            border-radius: 3px;
+            background: green;
+            transition: .2s;
+        }
+        .checkbox:checked + label:before {
+            border-color: red;
+        }
+        .checkbox:checked + label:after {
+            background: red;
+        }
+        .checkbox:checked + label:after {
+            left: 26px;
+        }
+
+        input[type=radio] + label:before {
+            content: "\26AB";
+            border: 1px solid green;
+            border-radius: 50%;
+            display: inline-block;
+            font-size: 20px;
+            line-height: 20px;
+            margin: -5px 5px 0 0;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 0;
+        }
+        input[type=radio]:checked + label:before {
+            border: 1px solid green;
+            font-size: 15px;
+        }
+
+        button{
+            padding: 15px 20px 15px 20px;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            margin-left: 15px;
+        }
+
+        .active{
+            background: rgb(65,173,73);
+        }
+        .active:hover{
+            background: rgb(44,119,49);
+        }
+
+        .danger{
+            background: rgb(228,64,97);
+        }
+
+        .danger:hover{
+            background: rgb(151,41,63);
+        }
+
+        .radio{
+            display: none;
+        }
+        .disable{
+            background: #ccc;
+        }
+        .plus,.minus{
+            border-radius: 50%;
+        }
+        .plus{
+            background: rgb(65,173,73);;
+        }
+        .minus{
+            background: rgb(228,64,97);
+        }
+        .firstActive{
+            margin-left:0;
+        }
+        textarea{
+            width: 500px;
+            height: 200px;
+        }
+
+        main{
+            background: rgb(245,245,245);
+            padding: 30px;
+            font-family: sans-serif;
+        }
+        input{
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .text{
+            width: 200px;
+        }
+        .text:focus{
+            border: #dc641e;
+        }
+
+        .validText{
+            color:green;
+            border:1px solid green;
+            color: green;
+            background:url("img/valid.png") no-repeat 195px;
+            background-size: 20px;
+
+        }
+
+        .invalidText{
+            color: red;
+            border:1px solid red;
+            color: green;
+            background:url("img/invalid.png") no-repeat 195px;
+            background-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <form action="textinput">
+            <h3>Inputs</h3>
+            <input required class="text" placeholder="Enter some text" name="text"/>
+            <input class="text validText" placeholder="Enter some text" name="text"/>
+            <input class="text invalidText" placeholder="Enter some text" name="text"/>
+            <h3>Check boxes</h3>
+            <input class="checkbox" id="checkbox1" type="checkbox" name="subscribe1"/><label for="checkbox1">Subscribe</label>
+            <input class="checkbox" id="checkbox2" type="checkbox" name="subscribe2"/><label for="checkbox2">Subscribe</label>
+            <h3>Radio buttons</h3>
+            Gender: <input type="radio" class="radio" name="gender1" value="male" id="radio1" checked/><label for="radio1">Male</label>
+            <input type="radio" class="radio" name="gender1" value="female" id="radio2"/><label for="radio2">Female</label>
+            <h2>Buttons</h2>
+            <button class="active firstActive">Active</button>
+            <button class="active">Hover</button>
+            <button class="danger">Danger</button>
+            <button class="danger">Hover</button>
+            <button class="disable">Disable</button>
+            <button class="plus">+</button>
+            <button class="minus">-</button>
+            <h2>Text area</h2>
+            <textarea placeholder="Enter some text..."></textarea>
+        </form>
+
+    </main>
+    <a href="index.html">Back</a>
+</body>
+</html>
