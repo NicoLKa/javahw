@@ -4,13 +4,14 @@ let equal = true;
 let count = 0;
 
 while(equal) {
-    let result = prompt(`Если число равно ${((end + start)/2)} тогда =, если число больше >,
+    let sum = Math.round((end + start)/2);
+    let result = prompt(`Если число равно ${sum} тогда =, если число больше >,
      если число меньше <`);
     if (result === ">") {
-        start = (start + end) / 2;
+        start = sum;
     } else if (result === "<") {
-        end = (start + end) / 2;
-    } else if (result === "=" || result == null) {
+        end = sum;
+    } else if (result === "=") {
         equal = false;
     }
     count++;
