@@ -3,17 +3,17 @@ let end = 100;
 let equal = true;
 let count = 0;
 
-do {
+while(equal) {
     let result = prompt(`Если число равно ${((end + start)/2)} тогда =, если число больше >,
      если число меньше <`);
-    count++;
     if (result === ">") {
         start = (start + end) / 2;
     } else if (result === "<") {
         end = (start + end) / 2;
-    } else if (result === "=") {
+    } else if (result === "=" || result == null) {
         equal = false;
     }
-} while (equal || result !== null);
+    count++;
+}
 
 alert(`Количество попыток ${count}`);
