@@ -1,18 +1,23 @@
 'use strict';
-var color ;
+let color = 'black';
 
-function setColor() {
-    if(Math.ceil(Math.random()*100) <= 50 ){
-        color = 'red';
-    }else {
-        var color = 'black';
-    }
-    console.log(color);
-    return color;
-};
-
-function drawBox(color) {
-    document.write("<div style='background:"+ color +";height:10px;'></div>")
+if (Math.ceil(Math.random() * 100) <= 50) {
+    drawBox(setColor(color));
+} else {
+    drawBox(setColor());
 }
 
-drawBox(setColor());
+function setColor(color) {
+    if (color !== undefined) {
+        console.log(color);
+        return color;
+    } else {
+        color = 'red';
+        console.log(color);
+        return color
+    }
+}
+
+function drawBox(color) {
+    document.write("<div style='background:" + color + ";height:10px;'></div>")
+}
