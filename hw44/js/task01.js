@@ -12,7 +12,7 @@ function setColor(color) {
         console.log(color);
         return color;
     } else {
-        color = 'red';
+        let color = 'red';
         console.log(color);
         return color
     }
