@@ -9,7 +9,7 @@ function isValidEmail(str) {
 function trimString(str) {
     str = str.replace(/^\s*/, "")
         .replace(/\s*$/g, "")
-        .replace(/\s/g, " ")
+        .replace(/\s/g, " ");
 
 
     return str;
