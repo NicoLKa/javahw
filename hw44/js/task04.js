@@ -1,4 +1,4 @@
-function arrayClone(arr){
+function arrayClone(arr) { // здесь должна быть рекурсия
     let clArr = [];
     for (let i = 0; i < arr.length; i++) {
         clArr[i] = arr[i];
