@@ -1,5 +1,5 @@
 function isUpperCaseFirstLetter(str) {
-    return /^[A-ZА-Я]/g.test(str);
+    return /^[A-ZА-ЯЙ]/g.test(str);
 }
 
 function isValidEmail(str) {
